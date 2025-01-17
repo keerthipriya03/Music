@@ -1,0 +1,249 @@
+/* Reset padding and margin for all elements */
+* {
+    padding: 0;
+    margin: 0;
+}
+
+/* Body background and font setup */
+body {
+    background-color: rgb(25, 15, 15);
+    font-family: sans-serif;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* Title bar styling */
+.title {
+    height: 80px;
+    width: 100%;
+    font-size: 60px;
+    font-family: 'Arial Narrow', Arial, sans-serif;
+    background-color: rgb(219, 127, 142);
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: fixed; /* Fix the title bar */
+    top: 0; /* Keep it at the top */
+    width: 100%;
+    z-index: 1000; /* Ensure it stays on top of other elements */
+}
+
+/* Navbar styling */
+.panel {
+    height: 40px;
+    background-color: #0f1111;
+    display: flex;
+    color: white;
+    align-items: center;
+    justify-content: space-evenly;
+    position: fixed; /* Fix the navbar at the top */
+    top: 80px; /* Position it just below the title bar */
+    width: 100%;
+    z-index: 999; /* Ensure it stays below the title bar */
+    padding: 0 20px; /* Add padding to space out navbar items */
+}
+
+/* Navbar links and styling */
+.panel-all,
+.panel-ops p {
+    font-size: 15px;
+    color: white;
+    padding: 0 10px;
+    display: inline-block;
+}
+
+.panel-all:hover,
+.panel-ops p:hover {
+    color: #b3b3b3;
+    cursor: pointer;
+}
+
+/* Container for options in navbar */
+.panel-ops {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    font-size: 0.85rem;
+}
+
+#top {
+    display: flex;
+    margin: 0px 8px;
+    align-items: center;
+}
+
+#top a {
+    color: #b3b3b3;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+#top a:hover {
+    color: #ffffff;
+    font-size: 16px;
+}
+
+#button {
+    background-color: #ffffff;
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+#button:hover {
+    color: #b3b3b3;
+}
+
+/* Sidebar styling */
+.sidebar {
+    position: fixed;
+    top: 120px; /* Adjust to account for the fixed header and navbar */
+    right: 0;
+    bottom: 0;
+    width: 280px;
+    background-color: black;
+    padding: 24px;
+    color: aliceblue;
+    overflow-y: auto; /* Allow sidebar to scroll if necessary */
+    z-index: 1; /* Keep sidebar above main content but below header/navbar */
+}
+
+/* Sidebar logo */
+.sidebar .logo img {
+    width: 200px;
+}
+
+/* Sidebar navigation links */
+.sidebar .navigation ul {
+    margin-top: 20px;
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar .navigation ul a {
+    color: #b3b3b3;
+    font-weight: 300;
+    text-decoration: none;
+    display: block;
+    padding: 10px 0;
+}
+
+.sidebar .navigation a:hover {
+    color: #ffffff;
+}
+
+/* Sidebar policies */
+.sidebar .policies {
+    position: absolute;
+    bottom: 50px;
+}
+
+.sidebar .policies a {
+    color: #b3b3b3;
+    font-weight: 300;
+    text-decoration: underline;
+}
+
+.sidebar .policies a:hover {
+    color: #ffffff;
+}
+
+/* Main content area styling */
+.artists , .albums{
+    margin-bottom: 2px;
+}
+
+.play-list {
+    margin-right: 330px; /* Offset for the fixed sidebar */
+    padding: 10px;
+    margin-top: 120px; /* Offset for the fixed header and navbar */
+    overflow-y: hidden; /* Allow scrolling of the main content */
+    height: calc(100vh - 120px); /* Take full height minus header and navbar */
+}
+
+/* Hide the scrollbar for .play-list */
+.play-list::-webkit-scrollbar {
+    width: 0px;  /* Hide scrollbar for webkit browsers */
+    background: transparent; /* Make the scrollbar transparent */
+}
+
+/* For Firefox */
+.play-list {
+    scrollbar-width: none; /* Hide scrollbar in Firefox */
+}
+
+/* Playlist heading */
+.play-list h2 {
+    color: aliceblue;
+    font-style: oblique;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+/* Playlist items */
+.play-list .list {
+    display: flex;
+    justify-content: space-between;
+    gap: 3px;
+    flex-wrap: wrap;
+    overflow-x: auto;  /* Allow horizontal scroll if content overflows */
+}
+
+/* Individual item styling */
+.item {
+    min-width: 140px;
+    width: 160px;
+    padding: 15px;
+    background-color: rgb(25, 15, 15);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all ease 0.4s;
+}
+
+.item img:hover {
+    background-color: rgb(186, 46, 46);
+}
+
+.item img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    object-fit: cover;             /* Ensure images don't get stretched */
+    display: flex;
+    gap: 5px;
+}
+
+/* Item for albums */
+.item1 img {
+    width: 200px;
+    height: 200px;
+    display: flex;
+    gap: 5px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    object-fit: cover;
+}
+
+/* making images to round */
+.artists .item img{
+    border-radius: 50%;
+    object-fit: cover;
+    width: 150px;
+    height: 150px;
+}
+
+/* Text styling inside playlist items */
+.list h4 {
+    color: antiquewhite;
+}
+
+.list p {
+    color: aliceblue;
+}
